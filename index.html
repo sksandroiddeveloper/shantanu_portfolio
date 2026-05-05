@@ -32,7 +32,11 @@
     .wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
     .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 60px; }
     .hero-inner { padding: 5rem 0 4rem; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--accent2); border: 1px solid rgba(126,232,162,0.25); background: rgba(126,232,162,0.07); padding: 5px 14px; border-radius: 20px; margin-bottom: 1.5rem; font-weight: 500; letter-spacing: 0.04em; }
+    .hero-avail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 1.5rem; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--accent2); border: 1px solid rgba(126,232,162,0.25); background: rgba(126,232,162,0.07); padding: 5px 14px; border-radius: 20px; font-weight: 500; letter-spacing: 0.04em; }
+    .avail-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.03em; }
+    .avail-remote { color: #4f8ef7; border: 1px solid rgba(79,142,247,0.3); background: rgba(79,142,247,0.08); }
+    .avail-contract { color: #f7a24f; border: 1px solid rgba(247,162,79,0.3); background: rgba(247,162,79,0.08); }
     .hero-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
     .hero h1 { font-family: 'Unbounded', sans-serif; font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.2rem; }
@@ -151,7 +155,8 @@
     .soc-btn { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; padding: 10px 16px; border-radius: 9px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; background: var(--surface2); transition: all 0.2s; }
     .soc-btn:hover { border-color: var(--accent); color: var(--text); }
     .soc-icon { font-size: 15px; width: 20px; text-align: center; }
-    .avail-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent2); border: 1px solid rgba(126,232,162,0.2); background: rgba(126,232,162,0.06); padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .avail-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent2); border: 1px solid rgba(126,232,162,0.2); background: rgba(126,232,162,0.06); padding: 4px 12px; border-radius: 20px; }
+    .contact-avail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; }
     .avail-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
     footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 12px; color: var(--muted); position: relative; z-index: 1; }
     .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -193,7 +198,11 @@
   <div class="wrap" id="home">
     <div class="hero">
       <div class="hero-inner">
-        <div class="hero-tag"><span class="dot"></span> Available for new projects</div>
+        <div class="hero-avail-row">
+          <div class="hero-tag"><span class="dot"></span> Available for new projects</div>
+          <div class="avail-pill avail-remote">&#127760; Remote Work</div>
+          <div class="avail-pill avail-contract">&#128196; Contract Based</div>
+        </div>
         <h1>Hi, I'm<br><span class="name-accent">Shantanu</span><br>Kumar Singh</h1>
         <p class="hero-sub"><strong>Senior Android Developer</strong> with 5 years shipping production apps on <strong>Android &amp; Flutter</strong>. Built <strong>Priya</strong> — an AI Hindi voice bot with Twilio + GPT-4o-mini + Sarvam TTS. Specialist in <strong>Firebase</strong>, <strong>WebRTC</strong>, and clean architecture.</p>
         <div class="hero-badges">
@@ -401,9 +410,13 @@
           <a href="https://playaug2014-lab.github.io/bhagyagastro/" class="contact-info-card" target="_blank"><div class="ci-icon">&#127760;</div><div><div class="ci-lbl">Web App</div><div class="ci-val">BhagyaG Astro</div></div></a>
         </div>
         <div class="contact-right">
-          <div class="avail-badge"><span class="avail-dot"></span> Currently Available</div>
+          <div class="contact-avail-row">
+            <div class="avail-badge"><span class="avail-dot"></span> Currently Available</div>
+            <div class="avail-pill avail-remote" style="font-size:11px;padding:4px 11px;">&#127760; Remote</div>
+            <div class="avail-pill avail-contract" style="font-size:11px;padding:4px 11px;">&#128196; Contract</div>
+          </div>
           <h3>Open to New Projects</h3>
-          <p>Whether you're building a new app from scratch, scaling an existing product, or integrating AI &amp; voice into mobile — I'd love to hear about it. Let's connect!</p>
+          <p>Whether you're building a new app from scratch, scaling an existing product, or integrating AI &amp; voice into mobile — I'm available for <strong style="color:var(--text)">remote work</strong> and <strong style="color:var(--text)">contract engagements</strong>. Let's connect!</p>
           <div class="social-links">
             <a href="https://github.com/" class="soc-btn" target="_blank"><span class="soc-icon">&#128025;</span> GitHub</a>
             <a href="https://www.linkedin.com/" class="soc-btn" target="_blank"><span class="soc-icon">&#128188;</span> LinkedIn</a>
